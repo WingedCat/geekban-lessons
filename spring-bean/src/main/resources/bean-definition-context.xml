@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user"  class="edu.xpu.hcp.entity.User">
+        <property name="name" value="张三"/>
+        <property name="age" value="25"/>
+    </bean>
+    <bean id="superUser"  class="edu.xpu.hcp.entity.SuperUser" parent="user">
+        <property name="role" value="超级管理员"/>
+    </bean>
+
+    <!-- 为Spring容器中的Bean建立别名-->
+    <alias name="user" alias="user1"/>
+</beans>
